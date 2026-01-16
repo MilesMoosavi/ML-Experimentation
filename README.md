@@ -1,35 +1,43 @@
-# ML-Experimentation: MNIST Neural Network with PyTorch
+# MNIST Hello World (PyTorch)
 
-This project implements a simple feedforward neural network to classify handwritten digits from the MNIST dataset using PyTorch.
+![Similarity Example 1](similarity-1.png)
+![Similarity Example 2](similarity-2.png)
 
-## Setup
+## Overview
 
-1. Install dependencies:
+- Trains a simple neural net on MNIST.
+- Saves model as `mnist_model.pth`.
+- Tkinter GUI to draw and predict digits.
+- Shows top 4 similar MNIST samples (SSIM).
+
+## Quickstart
+
+1. (Recommended) Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   # On Windows:
+   .venv\Scripts\activate
+   # On macOS/Linux:
+   source .venv/bin/activate
    ```
+
+2. Install dependencies:
+   ```bash
    pip install -r requirements.txt
    ```
-
-2. Run the neural network training and testing:
-   ```
+3. Train or test locally:
+   ```bash
    python mnist_nn.py
    ```
+4. Use the notebook (free GPU):
+   - Open `mnist_nn.ipynb` in VS Code and run with the Colab extension.
+   - Or, upload to Google Colab and:
+     - Select the `Runtime` tab
+     - Click `Change runtime type`
+     - Choose `T4 GPU` (or any other better GPUs if available, might be overkill though)
 
-## What it does
+## Notes / Future
 
-- Downloads the MNIST dataset automatically (if not already present)
-- Trains a simple neural network with 2 hidden layers
-- Tests the model on the test set
-- Saves the trained model as `mnist_model.pth`
+- May add top 4 for MSE (Mean Squared Error) to the right of SSIM later.
+- Notebook saves trained model with download link; could add to script.
 
-## Dataset
-
-The MNIST dataset is the "hello world" of machine learning, consisting of 70,000 grayscale images of handwritten digits (0-9).
-
-- Official website: http://yann.lecun.com/exdb/mnist/
-- In this code, we use PyTorch's `torchvision.datasets.MNIST` which downloads the dataset automatically.
-
-## Troubleshooting
-
-- If you encounter CUDA-related errors, the code will fall back to CPU training.
-- Ensure you have Python 3.7+ installed.
-- For GPU acceleration, install PyTorch with CUDA support if you have an NVIDIA GPU.

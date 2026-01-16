@@ -54,10 +54,10 @@ model = model.to(device)
 print(f'Using device: {device}')
 
 # Train for 5 epochs
-for epoch in tqdm(range(5)):
+for epoch in tqdm(range(5), desc="Epochs"):
     total_loss = 0
     # Loop over batches in training data
-    for images, labels in tqdm(train_loader, leave=False):
+    for images, labels in tqdm(train_loader, leave=False, desc="Batches"):
         images, labels = images.to(device), labels.to(device)
         # Clear gradients from previous batch
         optimizer.zero_grad()
